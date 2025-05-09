@@ -5,4 +5,16 @@ package it.unipd.mtss;
 // GIOELE MARZOLA 		2113193 
 ////////////////////////////////////////////////////////////////////
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
+public class IntegerToRomanTest {
+    @Test
+    public void testConvert() {
+        //Test 3
+        assertEquals("I", IntegerToRoman.convert(1));
+        assertEquals("II", IntegerToRoman.convert(2));
+        assertEquals("III", IntegerToRoman.convert(3));
+    }
+}
