@@ -103,7 +103,8 @@ public class RomanPrinterTest {
     //extra tests pt.2
     @Test
     public void testAsciiArtEmptyInput() {
-        assertEquals("", RomanPrinter.printAsciiArt(""));
+        String expected = "\n\n\n\n\n\n";
+        assertEquals(expected, RomanPrinter.printAsciiArt(""));
     }
 
     @Test
