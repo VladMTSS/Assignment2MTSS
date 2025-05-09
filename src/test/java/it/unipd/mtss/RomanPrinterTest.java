@@ -66,4 +66,36 @@ public class RomanPrinterTest {
         assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(1001));
         assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(-1));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAsciiArtWithInvalidChar() {
+        RomanPrinter.printAsciiArt("Z");
+    }
+
+    @Test
+    public void testPrintWithAllRomanSymbols() {
+        // CMXLIV → C, M, X, L, I, V = tutti tranne D (che testiamo separatamente)
+        RomanPrinter.print(944);
+    }
+
+    @Test
+    public void testExtraCoverage() {
+        // Test carattere non riconosciuto
+        assertThrows(IllegalArgumentException.class, () -> RomanPrinter.printAsciiArt("Z"));
+
+        // Test composizione completa di simboli: CMXLIV
+        assertEquals(
+                RomanPrinter.print(944),
+                RomanPrinter.print(IntegerToRoman.convert(944))
+        );
+
+        // Test ciascun simbolo separato
+        assertEquals(RomanPrinter.print(1), RomanPrinter.printAsciiArt("I"));
+        assertEquals(RomanPrinter.print(5), RomanPrinter.printAsciiArt("V"));
+        assertEquals(RomanPrinter.print(10), RomanPrinter.printAsciiArt("X"));
+        assertEquals(RomanPrinter.print(50), RomanPrinter.printAsciiArt("L"));
+        assertEquals(RomanPrinter.print(100), RomanPrinter.printAsciiArt("C"));
+        assertEquals(RomanPrinter.print(500), RomanPrinter.printAsciiArt("D"));
+        assertEquals(RomanPrinter.print(1000), RomanPrinter.printAsciiArt("M"));
+    }
 }

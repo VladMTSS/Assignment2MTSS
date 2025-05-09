@@ -11,7 +11,7 @@ public class RomanPrinter {
         return printAsciiArt(IntegerToRoman.convert(num));
     }
 
-    private static String printAsciiArt(String roman) {
+    static String printAsciiArt(String roman) {
         // Mapping ASCII art per ogni carattere romano (ordine: M, D, C, L, X, V, I)
         final String[][] asciiMap = {
                 { "  __  __ ", "  _____  ", "   _____ ", "  _      ", " __   __", " __      __", "  _____ " },
