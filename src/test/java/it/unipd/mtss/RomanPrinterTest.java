@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 public class RomanPrinterTest {
+
     @Test
     public void testPrint() {
         // Test 3
@@ -29,8 +30,8 @@ public class RomanPrinterTest {
         assertEquals(" __   __\n \\ \\ / /\n  \\ V / \n   > <  \n  / . \\ \n /_/ \\_\\\n", RomanPrinter.print(10));
 
         // Test 20
-        assertEquals(" __   __   _____ \n \\ \\ / /  / ____|\n  \\ V /  | |     \n   > <   | |     \n  / . \\  | |____ \n /_/ \\_\\  \\_____|\n", RomanPrinter.print(14));
-        assertEquals(" __   __   _____   _____  \n \\ \\ / /  / ____| |  __ \\ \n  \\ V /  | |      | |  | |\n   > <   | |      | |  | |\n  / . \\  | |____  | |__| |\n /_/ \\_\\  \\_____| |_____/\n", RomanPrinter.print(17));
+        assertEquals(" __   __   _____   _____  \n \\ \\ / /  / ____| |  __ \\ \n  \\ V /  | |      | |  | |\n   > <   | |      | |  | |\n  / . \\  | |____  | |__| |\n /_/ \\_\\  \\_____| |_____/\n", RomanPrinter.print(14));
+        assertEquals(" __   __   _____   _____   _____ \n \\ \\ / /  / ____| |  __ \\ |  __ \\ \n  \\ V /  | |      | |  | || |  | |\n   > <   | |      | |  | || |  | |\n  / . \\  | |____  | |__| || |__| |\n /_/ \\_\\  \\_____| |_____/ |_____/\n", RomanPrinter.print(17));
         assertEquals(" __   __  _____  __   __\n \\ \\ / / |_   _| \\ \\ / /\n  \\ V /    | |    \\ V / \n   > <     | |     > <  \n  / . \\   _| |_   / . \\ \n /_/ \\_\\ |_____| /_/ \\_\\\n", RomanPrinter.print(19));
         assertEquals(" __   __ __   __\n \\ \\ / / \\ \\ / /\n  \\ V /   \\ V / \n   > <     > <  \n  / . \\   / . \\ \n /_/ \\_\\ /_/ \\_\\\n", RomanPrinter.print(20));
 
@@ -66,3 +67,4 @@ public class RomanPrinterTest {
         assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(-1));
     }
 }
+
