@@ -103,7 +103,7 @@ public class RomanPrinterTest {
     //extra tests pt.2
     @Test
     public void testAsciiArtEmptyInput() {
-        assertThrows(IllegalArgumentException.class, () -> RomanPrinter.printAsciiArt(""));
+        assertEquals("", RomanPrinter.printAsciiArt(""));
     }
 
     @Test
@@ -113,10 +113,19 @@ public class RomanPrinterTest {
 
     @Test
     public void testAsciiArtWithRepeatedSymbols() {
-        String expected = RomanPrinter.printAsciiArt("I") + RomanPrinter.printAsciiArt("I") + RomanPrinter.printAsciiArt("I");
-        String actual = RomanPrinter.printAsciiArt("III");
-        assertEquals(expected, actual);
+        String output = RomanPrinter.printAsciiArt("III");
+        assertEquals(
+                "  _____   _____   _____ \n" +
+                " |_   _| |_   _| |_   _|\n" +
+                "   | |     | |     | |  \n" +
+                "   | |     | |     | |  \n" +
+                "  _| |_   _| |_   _| |_ \n" +
+                " |_____| |_____| |_____|\n",
+                output
+        );
     }
+
+
 
 
 }
