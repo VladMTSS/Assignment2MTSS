@@ -126,6 +126,19 @@ public class RomanPrinterTest {
         );
     }
 
+    //extra tests pt. 3
+    @Test
+    public void testIntegerToRomanConstructor() {
+        new IntegerToRoman();
+    }
+    @Test
+    public void testRomanPrinterConstructor() {
+        new RomanPrinter();
+    }
+
+
+
+
 
 
 
