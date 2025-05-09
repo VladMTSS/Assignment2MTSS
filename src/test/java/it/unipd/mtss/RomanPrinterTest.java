@@ -67,6 +67,7 @@ public class RomanPrinterTest {
         assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(-1));
     }
 
+    //extra tests pt. 1
     @Test(expected = IllegalArgumentException.class)
     public void testAsciiArtWithInvalidChar() {
         RomanPrinter.printAsciiArt("Z");
@@ -98,4 +99,24 @@ public class RomanPrinterTest {
         assertEquals(RomanPrinter.printAsciiArt("D"), RomanPrinter.print(500));
         assertEquals(RomanPrinter.printAsciiArt("M"), RomanPrinter.print(1000));
     }
+
+    //extra tests pt.2
+    @Test
+    public void testAsciiArtEmptyInput() {
+        assertThrows(IllegalArgumentException.class, () -> RomanPrinter.printAsciiArt(""));
+    }
+
+    @Test
+    public void testAsciiArtLowercaseInput() {
+        assertThrows(IllegalArgumentException.class, () -> RomanPrinter.printAsciiArt("ivxlcdm"));
+    }
+
+    @Test
+    public void testAsciiArtWithRepeatedSymbols() {
+        String expected = RomanPrinter.printAsciiArt("I") + RomanPrinter.printAsciiArt("I") + RomanPrinter.printAsciiArt("I");
+        String actual = RomanPrinter.printAsciiArt("III");
+        assertEquals(expected, actual);
+    }
+
+
 }
